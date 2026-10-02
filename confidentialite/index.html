@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFF7FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A0913" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Politique de confidentialité, conditions d'utilisation et mentions légales de la bêta privée d'Oracœur, l'app de rencontres spirituelle.">
+<title>Oracœur — Confidentialité et conditions</title>
+<link rel="canonical" href="https://oracoeur.fr/confidentialite/">
+<link rel="icon" href="../assets/oracoeur-icon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oracœur">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://oracoeur.fr/confidentialite/">
+<meta property="og:title" content="Oracœur · Confidentialité et conditions">
+<meta property="og:description" content="Ce que les autres voient, tes droits, nos règles&nbsp;: la politique de confidentialité, les conditions et les mentions légales de la bêta privée.">
+<meta property="og:image" content="https://oracoeur.fr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le logo d'Oracœur, un cœur comme une boule de cristal, et l'écran Découvrir de l'app (capture de la bêta, profil fictif).">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #FFF7FA;
+    --surface: #FFFFFF;
+    --surface-2: #FDEEF3;
+    --text: #2A0F1F;
+    --muted: #6E4A5D;
+    --line: #F1D8E2;
+    --accent: #E8457A;
+    --rose: #B8235A;
+    --link: #B8235A;
+    --focus: #B8235A;
+    --chip: #FBE3EC;
+    --shadow: 0 1px 2px rgba(42, 15, 31, .06), 0 6px 20px rgba(42, 15, 31, .05);
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1A0913;
+      --surface: #25101C;
+      --surface-2: #2E1423;
+      --text: #FFF0F5;
+      --muted: #DDA8BF;
+      --line: #3D1D2F;
+      --accent: #FF5C8A;
+      --rose: #FF5C8A;
+      --link: #FFA3C2;
+      --focus: #F7C98B;
+      --chip: #3A1426;
+      --shadow: none;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-wrap: break-word;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left));
+  }
+
+  img { max-width: 100%; height: auto; }
+  .topbar { padding-top: max(10px, env(safe-area-inset-top)); }
+  .home {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 44px; padding: 0 16px; border-radius: 999px;
+    background: var(--chip); color: var(--link);
+    font-size: 15px; font-weight: 600; text-decoration: none;
+  }
+  .home:hover { text-decoration: underline; }
+  header.top { padding: 20px 0 20px; text-align: center; }
+  .mark { width: 72px; height: 72px; display: block; margin: 0 auto 6px; filter: drop-shadow(0 6px 16px rgba(255, 92, 138, .35)); }
+  .brand { margin: 0; font: 400 24px/1.2 var(--serif); color: var(--text); }
+  .brand span { color: var(--rose); }
+  h1 {
+    margin: 8px 0 8px;
+    font-family: var(--serif);
+    font-size: 30px; line-height: 1.2; font-weight: 400;
+  }
+  .version { margin: 0; color: var(--muted); font-size: 14px; }
+
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+  .toc-main:focus-visible { border-radius: 12px; }
+  .home:focus-visible { border-radius: 999px; }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 16px 18px 6px;
+    box-shadow: var(--shadow);
+    margin: 8px 0 28px;
+  }
+  nav.toc h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-family: inherit; }
+  .toc-groups { display: grid; gap: 14px; }
+  @media (min-width: 560px) { .toc-groups { grid-template-columns: 1fr 1fr; } }
+  .toc-main {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; text-decoration: none; color: var(--text);
+    padding: 10px 12px; border-radius: 12px; background: var(--chip);
+  }
+  .toc-main::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+  .toc ol { margin: 8px 0 10px; padding-left: 30px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .toc-solo { padding-bottom: 12px; }
+  .toc ol li { margin: 0; }
+  .toc ol a { display: inline-block; padding: 5px 0; color: var(--muted); text-decoration: none; }
+  .toc ol a:hover, .toc ol a:focus-visible { color: var(--link); text-decoration: underline; }
+
+  section.part { scroll-margin-top: 12px; }
+  .part-head {
+    display: flex; align-items: center; gap: 12px;
+    margin: 36px 0 6px; padding-bottom: 12px; border-bottom: 2px solid var(--accent);
+  }
+  .part-head h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 25px; line-height: 1.25; font-weight: 400;
+  }
+  .part-icon { width: 34px; height: 34px; flex: none; }
+  .lead { color: var(--muted); margin: 12px 0 0; }
+
+  h3 {
+    scroll-margin-top: 12px;
+    margin: 30px 0 8px;
+    font-size: 19px; line-height: 1.35;
+    display: flex; gap: 10px; align-items: baseline;
+  }
+  h3 .n {
+    flex: none;
+    display: inline-grid; place-items: center;
+    min-width: 26px; height: 26px; padding: 0 6px;
+    border-radius: 13px; background: var(--chip); color: var(--link);
+    font-size: 14px; font-weight: 800; transform: translateY(-2px);
+  }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 700; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    margin: 14px 0;
+  }
+  .card > :first-child { margin-top: 0; }
+  .card > :last-child { margin-bottom: 0; }
+  .brief { border-left: 4px solid var(--accent); }
+  .brief .brief-title { margin: 0 0 6px; font-size: 15px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--link); }
+  .note { background: var(--surface-2); border-color: transparent; box-shadow: none; }
+
+  dl.bases, dl.legal { margin: 12px 0; display: grid; gap: 10px; }
+  dl.bases > div, dl.legal > div {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  dl.bases dt { font-weight: 600; }
+  dl.bases dd { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+  dl.bases dd::before { content: "Base légale\00a0: "; font-weight: 700; color: var(--link); }
+  dl.legal dt { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--link); }
+  dl.legal dd { margin: 4px 0 0; }
+
+  .path {
+    display: inline;
+    background: var(--chip);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: .94em;
+    white-space: normal;
+  }
+
+  .ban { list-style: none; padding: 0; display: grid; gap: 8px; }
+  .ban li {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 12px 10px 40px;
+    position: relative;
+  }
+  .ban li::before {
+    content: "";
+    position: absolute; left: 14px; top: 50%;
+    width: 14px; height: 14px; margin-top: -7px;
+    border: 2px solid var(--accent); border-radius: 50%;
+    background: linear-gradient(135deg, transparent 44%, var(--accent) 44%, var(--accent) 56%, transparent 56%);
+  }
+
+  .back { margin: 16px 0 0; font-size: 14px; text-align: right; }
+  .back a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); }
+
+  footer.bottom {
+    margin-top: 44px; padding-top: 18px;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 14px; text-align: center;
+  }
+  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 6px; margin: 6px 0 0; }
+  .foot-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+
+  @media (min-width: 700px) {
+    h1 { font-size: 36px; }
+    .part-head h2 { font-size: 28px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media print {
+    body { background: #fff; color: #000; font-size: 12pt; }
+    nav.toc, .back, .topbar, .foot-links { display: none; }
+    .mark { filter: none; }
+    .card, dl.bases > div, .ban li { box-shadow: none; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="topbar" aria-label="Retour au site">
+  <a class="home" href="../"><span aria-hidden="true">←</span> Accueil</a>
+</nav>
+
+<header class="top" id="haut">
+  <img class="mark" src="../assets/oracoeur-mark.svg" width="72" height="72" alt="">
+  <p class="brand">Ora<span>cœ</span>ur</p>
+  <h1>Confidentialité et conditions</h1>
+  <p class="version">Bêta privée (TestFlight) · Version du 2 octobre 2026</p>
+</header>
+
+<nav class="toc" aria-labelledby="sommaire">
+  <h2 id="sommaire">Sommaire</h2>
+  <div class="toc-groups">
+    <div>
+      <a class="toc-main" href="#confidentialite">Politique de confidentialité</a>
+      <ol>
+        <li><a href="#c-responsable">Qui est responsable ?</a></li>
+        <li><a href="#c-donnees">Les données traitées</a></li>
+        <li><a href="#c-bases">Pourquoi, et sur quelle base</a></li>
+        <li><a href="#c-visible">Ce que les autres voient</a></li>
+        <li><a href="#c-destinataires">Qui reçoit tes données</a></li>
+        <li><a href="#c-durees">Combien de temps</a></li>
+        <li><a href="#c-droits">Tes droits</a></li>
+        <li><a href="#c-securite">Sécurité</a></li>
+        <li><a href="#c-mineurs">Mineurs</a></li>
+        <li><a href="#c-changements">Changements</a></li>
+      </ol>
+    </div>
+    <div>
+      <a class="toc-main" href="#conditions">Conditions d'utilisation</a>
+      <ol>
+        <li><a href="#t-beta">Une bêta privée</a></li>
+        <li><a href="#t-age">18 ans et plus</a></li>
+        <li><a href="#t-fictifs">Profils fictifs</a></li>
+        <li><a href="#t-lecture">Une lecture symbolique</a></li>
+        <li><a href="#t-tolerance">Tolérance zéro</a></li>
+        <li><a href="#t-interdit">Ce qui est interdit</a></li>
+        <li><a href="#t-signaler">Signaler et bloquer</a></li>
+        <li><a href="#t-moderation">Modération</a></li>
+        <li><a href="#t-securite">Ta sécurité</a></li>
+        <li><a href="#t-disponibilite">Pas de garantie</a></li>
+        <li><a href="#t-compte">Ton compte</a></li>
+        <li><a href="#t-contact">Contact et droit applicable</a></li>
+      </ol>
+    </div>
+    <div class="toc-solo">
+      <a class="toc-main" href="#mentions">Mentions légales</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================ CONFIDENTIALITÉ ============================ -->
+<section class="part" id="confidentialite" aria-labelledby="titre-confidentialite">
+  <div class="part-head">
+    <svg class="part-icon" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="16" fill="var(--chip)"/>
+      <path d="M17 7.5l7.5 3v5.6c0 4.8-3.2 8.6-7.5 10.4-4.3-1.8-7.5-5.6-7.5-10.4v-5.6z" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M17 20.5c-2.4-1.6-3.9-3-3.9-4.8 0-1.2.9-2.1 2.1-2.1.8 0 1.4.4 1.8 1 .4-.6 1-1 1.8-1 1.2 0 2.1.9 2.1 2.1 0 1.8-1.5 3.2-3.9 4.8z" fill="var(--accent)"/>
+    </svg>
+    <h2 id="titre-confidentialite">Politique de confidentialité</h2>
+  </div>
+  <p class="lead">Elle s'applique à la bêta privée d'Oracœur, distribuée par TestFlight. « Nous » désigne Samuel Goldery, qui édite l'app et décide de l'usage de tes données.</p>
+
+  <div class="card brief">
+    <p class="brief-title">En bref</p>
+    <ul>
+      <li>Oracœur est une app de rencontres réservée aux adultes.</li>
+      <li>Elle calcule une affinité symbolique à partir de ta naissance et de tes croyances. C'est un jeu de lecture, pas une prédiction.</li>
+      <li>Pendant la bêta, la plupart des profils sont fictifs. Ils portent la mention « Profil fictif » et répondent automatiquement.</li>
+      <li>Pas de publicité, pas de revente, pas de pistage, pas de mesure d'audience dans l'app (TestFlight nous donne seulement des statistiques de test, partie 5).</li>
+      <li>Tu peux effacer ton compte et tes données depuis l'app, à tout moment (quelques exceptions, partie 6).</li>
+    </ul>
+  </div>
+
+  <h3 id="c-responsable"><span class="n">1</span><span>Qui est responsable ?</span></h3>
+  <p>Samuel Goldery, particulier, France.</p>
+  <p>Pour toute question, et pour exercer tes droits : <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</p>
+
+  <h3 id="c-donnees"><span class="n">2</span><span>Les données que nous traitons</span></h3>
+  <ul>
+    <li><strong>Compte</strong> : un identifiant technique, créé sans e-mail ni téléphone. Si tu relies ton compte à Apple, nous gardons aussi l'identifiant fourni par « Se connecter avec Apple ». Nous ne demandons à Apple ni ton nom ni ton e-mail. Sur ton téléphone, l'app garde seulement ta session de connexion.</li>
+    <li><strong>Profil de rencontre</strong> : prénom, genre, genres recherchés, intention (relation sérieuse, voir où ça mène, amitié spirituelle), bio (140 caractères au plus), jusqu'à 6 photos et leur statut de vérification.</li>
+    <li><strong>Naissance</strong> : nom de naissance complet, date, heure (facultative), ville de naissance choisie dans une liste, avec ses coordonnées et son fuseau horaire. Jamais ton adresse.</li>
+    <li><strong>Croyances</strong> : réponses au questionnaire, pratiques spirituelles, et importance que tu donnes à chaque système (astrologie, lune, numérologie, prénoms, tarot).</li>
+    <li><strong>Activité</strong> : profils aimés ou passés, matchs, messages (y compris ceux envoyés aux profils fictifs), personnes que tu bloques ou qui te bloquent, signalements que tu envoies ou qui te visent (motif choisi dans une liste, date, statut).</li>
+    <li><strong>Accords</strong> : tes 4 accords et leur date.</li>
+    <li><strong>Technique</strong> : un journal des appels au calcul (identifiant du compte, type d'action, heure) pour limiter les abus ; tes sessions de connexion (adresse IP, appareil et version du logiciel, dates) et les dates de création et de dernière connexion de ton compte ; les journaux de notre hébergeur (adresse IP, date, requête). L'adresse IP révèle une position approximative.</li>
+    <li><strong>Invitation TestFlight</strong> : si tu es invité par e-mail, ton prénom (ou nom) et ton e-mail, que nous donnons à Apple pour t'envoyer l'invitation.</li>
+  </ul>
+
+  <div class="card note">
+    <p><strong>Données sensibles.</strong> Tes croyances sont des convictions religieuses ou philosophiques. Les genres que tu recherches peuvent révéler ton orientation sexuelle. Nous ne les traitons qu'avec ton accord explicite et séparé (article 9.2.a du RGPD). Quand il traite un signalement, le modérateur peut les voir sur le profil signalé ou dans la discussion concernée : ton accord couvre aussi ce cas. Dans un cas grave, elles peuvent servir à constater, exercer ou défendre un droit en justice (article 9.2.f).</p>
+  </div>
+
+  <p><strong>Ce que nous ne collectons pas :</strong></p>
+  <ul>
+    <li>ta position GPS : ton téléphone réencode chaque photo avant l'envoi, ce qui retire ses métadonnées, dont le GPS. Seule ton adresse IP, dans les données techniques, révèle une position approximative ;</li>
+    <li>tes contacts ;</li>
+    <li>ta photothèque : tu choisis une photo à la fois, et l'app ne reçoit que celle-là ;</li>
+    <li>un identifiant publicitaire.</li>
+  </ul>
+
+  <p><strong>Obligatoire pour utiliser l'app :</strong> prénom, genre, genres recherchés, intention, nom de naissance, date et ville de naissance, questionnaire, importance de chaque système, et les 4 accords. Sans eux, tu ne peux pas créer de profil. <strong>Facultatif :</strong> heure de naissance, bio, pratiques, photos, lien avec Apple.</p>
+
+  <h3 id="c-bases"><span class="n">3</span><span>Pourquoi, et sur quelle base légale</span></h3>
+  <dl class="bases">
+    <div>
+      <dt>Créer ton compte, montrer ton prénom, ton âge, ton intention, ta bio et tes photos validées, te proposer des profils, gérer matchs et messages</dt>
+      <dd>exécution des conditions d'utilisation (art. 6.1.b du RGPD).</dd>
+    </div>
+    <div>
+      <dt>Calculer tes affinités à partir de ta naissance et de tes croyances, et montrer aux autres tes pratiques (avant un match), ton intensité spirituelle et l'importance de chaque système (après un match)</dt>
+      <dd>ton consentement explicite (art. 6.1.a et 9.2.a).</dd>
+    </div>
+    <div>
+      <dt>Te proposer des profils selon ton genre et les genres que tu cherches, dans les deux sens</dt>
+      <dd>ton consentement explicite (art. 6.1.a et 9.2.a).</dd>
+    </div>
+    <div>
+      <dt>Vérifier les photos, traiter les signalements, bloquer, filtrer automatiquement certains mots, limiter les abus, sécuriser le service</dt>
+      <dd>intérêt légitime : protéger les utilisateurs et le service (art. 6.1.f). Pour les données sensibles vues en traitant un signalement : ton accord explicite (art. 9.2.a) et, dans un cas grave, la défense d'un droit en justice (art. 9.2.f).</dd>
+    </div>
+    <div>
+      <dt>Garder la preuve de tes accords</dt>
+      <dd>obligation de pouvoir démontrer ton consentement (art. 6.1.c et 7.1).</dd>
+    </div>
+    <div>
+      <dt>Inviter les testeurs et améliorer l'app grâce à leurs retours</dt>
+      <dd>intérêt légitime : faire vivre et améliorer la bêta (art. 6.1.f).</dd>
+    </div>
+    <div>
+      <dt>Répondre à une autorité, si la loi l'impose</dt>
+      <dd>obligation légale (art. 6.1.c).</dd>
+    </div>
+  </dl>
+  <p><strong>Profilage.</strong> Avant un match, seuls les profils dont les genres correspondent dans les deux sens te sont proposés. Ils sont classés par une affinité simplifiée, à poids fixes : éléments de vos signes solaires, intensité spirituelle et pratiques, prénoms. Après un match, le score complet (6 clés pondérées par vos croyances) est expliqué dans <span class="path">Moi › Comment marche le score</span>. Aucun de ces calculs n'a d'effet juridique sur toi.</p>
+
+  <h3 id="c-visible"><span class="n">4</span><span>Ce que les autres voient</span></h3>
+  <ul>
+    <li><strong>Avant un match</strong>, quand tu apparais dans leur paquet : ton prénom, ton âge (calculé à l'année), ton intention, ta bio, ton signe solaire, tes pratiques spirituelles, tes photos validées et un score arrondi.</li>
+    <li><strong>Après un match réciproque</strong> : ta lecture complète. Elle montre tes signes (Soleil, Lune, planètes et, si tu as donné ton heure, Ascendant), tes nombres, ton arcane, ton intensité spirituelle (un score sur 100 tiré de tes réponses au questionnaire) et l'importance que tu donnes à chaque système. Elle peut permettre de retrouver ta date de naissance et, avec l'Ascendant, une plage d'environ 2 heures pour ton heure de naissance. Et vos messages.</li>
+    <li><strong>Jamais affichés</strong> : ton genre et les genres que tu cherches, ton nom de naissance, ton heure exacte et ton lieu de naissance, tes réponses une à une au questionnaire.</li>
+    <li><strong>À savoir</strong> : les profils sont proposés dans les deux sens. Si tu apparais dans le paquet de quelqu'un, cette personne sait que tu cherches son genre. En changeant ses propres réglages, elle peut aussi deviner ton genre et les autres genres que tu cherches. Entre amis, pense-y : tu peux utiliser un prénom d'emprunt.</li>
+    <li><strong>Blocage</strong> : quand une personne est bloquée, vous ne vous voyez plus et la discussion disparaît pour vous deux. Elle reste enregistrée, pour pouvoir traiter un signalement, jusqu'à la suppression d'un des deux comptes ou la fin de la bêta.</li>
+  </ul>
+
+  <h3 id="c-destinataires"><span class="n">5</span><span>Qui reçoit tes données</span></h3>
+  <ul>
+    <li><strong>Supabase (Supabase, Inc.)</strong>, notre hébergeur et sous-traitant : base de données, fichiers et calcul. Tes données sont stockées à Paris (Union européenne), et les fonctions de calcul y sont lancées. Supabase et certains de ses sous-traitants peuvent y accéder depuis d'autres pays, dont les États-Unis. Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne, prévues par le contrat de sous-traitance de Supabase. Tu peux en demander une copie à <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</li>
+    <li><strong>Apple</strong>, pour ses propres traitements :
+      <ul>
+        <li>« Se connecter avec Apple », si tu l'utilises ;</li>
+        <li>TestFlight. Si tu es invité par e-mail, Apple reçoit ton nom et ton e-mail pour t'envoyer l'invitation. Si tu passes par un lien public, Apple ne nous les donne pas. Dans les deux cas, Apple nous transmet le modèle de ton appareil, la version d'iOS, tes sessions, les plantages et les retours que tu envoies, captures comprises.</li>
+      </ul>
+      Apple peut traiter ces données hors de l'Union européenne, notamment aux États-Unis. La politique de confidentialité d'Apple s'applique à ces traitements.</li>
+    <li><strong>Les autres utilisateurs</strong>, dans les limites de la partie 4. Cela peut inclure l'équipe d'Apple qui vérifie l'app avant sa diffusion : elle l'utilise comme un testeur.</li>
+    <li><strong>L'administration et la modération</strong> : Samuel Goldery administre le service. Il a un accès technique à toutes les données, y compris ta naissance, tes croyances, ton genre et tes messages. Il ne les ouvre que pour modérer, traiter une demande ou corriger un problème. Il vérifie chaque photo à la main avant qu'elle soit visible. Pour traiter un signalement, il peut consulter le profil signalé et, si besoin, la discussion concernée.</li>
+    <li><strong>Notre messagerie</strong> (Google, pour Gmail), pour les e-mails que tu nous envoies.</li>
+    <li><strong>L'hébergeur de ce site, oracoeur.fr</strong> (GitHub Pages, de GitHub, Inc.), qui voit l'adresse IP des visiteurs et peut la traiter aux États-Unis. Voir les <a href="#mentions">mentions légales</a>.</li>
+    <li><strong>Les autorités</strong>, seulement si la loi l'impose.</li>
+  </ul>
+  <p>Nous ne vendons rien et ne partageons rien à des fins publicitaires.</p>
+
+  <h3 id="c-durees"><span class="n">6</span><span>Combien de temps nous gardons tes données</span></h3>
+  <ul>
+    <li><strong>Tant que ton compte existe</strong> : profil, naissance, croyances, photos, matchs, messages et accords.</li>
+    <li><strong>« Supprimer toutes mes données »</strong> (<span class="path">Moi › Confidentialité et données</span>) efface aussitôt ton compte, ton profil, ta naissance, tes croyances, tes photos (fichiers compris), tes « j'aime » et « je passe », tes matchs, tes blocages et tes accords. Les discussions auxquelles tu participais sont effacées pour les deux personnes. Si ton compte est relié à Apple, Apple te demande une confirmation. Pour retirer aussi Oracœur de ton identifiant Apple : <span class="path">Réglages › ton nom › Connexion et sécurité › Se connecter avec Apple › Oracœur</span>, puis arrête de l'utiliser.</li>
+    <li><strong>« Retirer mes accords »</strong> (même écran) a le même effet : sans ces accords, l'app ne peut pas fonctionner.</li>
+    <li><strong>Si tu supprimes seulement l'app</strong>, ton compte reste jusqu'à la fin de la bêta. Utilise le bouton ci-dessus.</li>
+    <li><strong>Fin de la bêta</strong> : les données de la bêta sont effacées au plus tard 3 mois après sa fin, sauf si tu choisis alors de garder ton compte pour la version publique.</li>
+    <li><strong>Photos refusées</strong> : effacées sous 30 jours.</li>
+    <li><strong>Signalements</strong> : gardés 12 mois pour la sécurité de tous, même après la suppression d'un compte. Quand un compte est supprimé, le champ qui le désignait (auteur ou personne signalée) est vidé. Le signalement garde le motif, la date, le statut et l'identifiant de l'autre personne, si son compte existe encore.</li>
+    <li><strong>Journal des appels au calcul</strong> : les lignes de plus de 24 heures sont effacées à ton appel suivant. Si tu n'utilises plus l'app, ou après la suppression de ton compte, elles sont effacées à la main sous 30 jours.</li>
+    <li><strong>Sessions de connexion</strong> : tant qu'elles restent ouvertes ; effacées avec ton compte.</li>
+    <li><strong>Journaux de l'hébergeur</strong> : 7 jours.</li>
+    <li><strong>Sauvegardes automatiques</strong> : les données effacées peuvent y rester jusqu'à 7 jours.</li>
+    <li><strong>TestFlight</strong> : ton nom et ton e-mail d'invitation sont retirés au plus tard 3 mois après la fin de la bêta ; tes retours sont supprimés une fois traités.</li>
+  </ul>
+  <div class="card note">
+    <p>Il n'y a pas encore d'effacement automatique pour la fin de la bêta, les photos refusées, les signalements, le journal des appels des comptes supprimés ou inactifs et les retours TestFlight. Samuel Goldery fait ces effacements à la main, dans les délais ci-dessus.</p>
+  </div>
+
+  <h3 id="c-droits"><span class="n">7</span><span>Tes droits</span></h3>
+  <p>Tu peux à tout moment :</p>
+  <ul>
+    <li><strong>accéder</strong> à tes données et en recevoir une copie (portabilité) : écris-nous ;</li>
+    <li><strong>les corriger</strong> dans <span class="path">Moi › Modifier mon profil</span> et <span class="path">Moi › Mes photos</span>. La date, l'heure et le lieu de naissance ne peuvent changer que 3 fois pendant les 24 premières heures, puis une fois par semaine. Au-delà, écris-nous ;</li>
+    <li><strong>les effacer</strong> : <span class="path">Moi › Confidentialité et données › Supprimer toutes mes données</span> ;</li>
+    <li><strong>retirer ton consentement</strong> : même écran, « Retirer mes accords ». Ce qui a été fait avant reste valable ;</li>
+    <li>demander la <strong>limitation</strong> d'un traitement ;</li>
+    <li><strong>décider</strong> de ce que deviennent tes données après ton décès.</li>
+  </ul>
+  <div class="card brief">
+    <p><strong>Ton droit d'opposition</strong> : tu peux t'opposer à tout moment aux traitements fondés sur notre intérêt légitime (modération, sécurité, retours de bêta), en écrivant à <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</p>
+  </div>
+  <p>Écris à <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>. Nous répondons sous un mois. Ton compte n'a ni e-mail ni mot de passe : nous pourrons te demander un élément pour vérifier qu'il est bien le tien.</p>
+  <p><strong>Réclamation</strong> : si tu estimes que tes droits ne sont pas respectés, tu peux saisir la CNIL, sur <a href="https://www.cnil.fr/fr/plaintes">www.cnil.fr/fr/plaintes</a> ou au 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</p>
+
+  <h3 id="c-securite"><span class="n">8</span><span>Sécurité</span></h3>
+  <ul>
+    <li>Hébergement à Paris. Connexions chiffrées (HTTPS). Données chiffrées sur les serveurs.</li>
+    <li>Chacun ne peut lire que ses propres données et les messages de ses propres discussions. Les profils des autres passent par un calcul côté serveur, qui ne renvoie jamais la date, l'heure ni le lieu de naissance.</li>
+    <li>Les photos sont stockées dans un espace privé. Les autres ne les voient qu'une fois validées, par des liens valables 3 heures.</li>
+    <li>Les messages ne sont pas chiffrés de bout en bout.</li>
+    <li>En cas de fuite de données qui présente un risque pour toi, nous prévenons la CNIL sous 72 heures et, si le risque est élevé, nous te prévenons aussi.</li>
+  </ul>
+
+  <h3 id="c-mineurs"><span class="n">9</span><span>Mineurs</span></h3>
+  <p>Oracœur est interdit aux moins de 18 ans. Ta date de naissance est contrôlée par l'app et par notre base : elle doit indiquer 18 ans révolus. Elle reste déclarative : nous ne demandons pas de pièce d'identité. Si un profil te semble être celui d'un mineur, signale-le avec le motif « Semble mineur » : nous le traitons en priorité et supprimons le compte d'un mineur.</p>
+
+  <h3 id="c-changements"><span class="n">10</span><span>Changements</span></h3>
+  <p>Si cette politique change, nous te prévenons dans l'app ou par TestFlight. Si l'usage de tes données sensibles change, nous te redemandons ton accord.</p>
+
+  <p class="back"><a href="#haut"><span aria-hidden="true">↑</span> Retour au sommaire</a></p>
+</section>
+
+<!-- ============================ CONDITIONS ============================ -->
+<section class="part" id="conditions" aria-labelledby="titre-conditions">
+  <div class="part-head">
+    <svg class="part-icon" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="16" fill="var(--chip)"/>
+      <rect x="10" y="8" width="14" height="18" rx="2.5" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <path d="M13.5 13h7M13.5 16.5h7M13.5 20h4.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <h2 id="titre-conditions">Conditions d'utilisation</h2>
+  </div>
+  <p class="lead">Elles s'appliquent à la bêta privée d'Oracœur. En cochant « J'accepte les conditions » dans l'app, tu les acceptes.</p>
+
+  <h3 id="t-beta"><span class="n">1</span><span>Une bêta privée, sur invitation</span></h3>
+  <ul>
+    <li>Oracœur est en test. La bêta est réservée aux personnes invitées par Samuel Goldery, et distribuée par TestFlight, l'app de test d'Apple.</li>
+    <li>Ton invitation est personnelle : ne la transmets pas sans nous en parler.</li>
+    <li>La bêta est gratuite. Il n'y a rien à acheter.</li>
+  </ul>
+
+  <h3 id="t-age"><span class="n">2</span><span>18 ans et plus</span></h3>
+  <p>Oracœur est réservé aux personnes majeures. Ta date de naissance est contrôlée par l'app et par notre base : elle doit indiquer 18 ans révolus. Elle reste déclarative : nous ne demandons pas de pièce d'identité. Un compte qui appartient à un mineur est supprimé.</p>
+
+  <h3 id="t-fictifs"><span class="n">3</span><span>Des profils fictifs</span></h3>
+  <ul>
+    <li>Pendant la bêta, la plupart des profils sont fictifs. Ils servent à tester l'app et ne correspondent à aucune personne réelle.</li>
+    <li>Ils portent la mention « Profil fictif ». Ils peuvent t'aimer en retour et répondent automatiquement, avec des phrases écrites à l'avance.</li>
+    <li>Les messages que tu leur envoies sont enregistrés comme les autres.</li>
+  </ul>
+
+  <h3 id="t-lecture"><span class="n">4</span><span>Une lecture symbolique, pas une prédiction</span></h3>
+  <p>Le score et la lecture sont un jeu d'interprétation symbolique (astrologie, lune, numérologie, prénoms, tarot). Ils ne prédisent rien, ne reposent sur aucune preuve scientifique et ne garantissent aucune compatibilité. Ne prends pas de décision importante sur leur seule base.</p>
+
+  <h3 id="t-tolerance"><span class="n">5</span><span>Tolérance zéro</span></h3>
+  <div class="card brief">
+    <p>Aucun contenu choquant et aucun utilisateur abusif ne sont tolérés.</p>
+    <p>Un contenu contraire à ces règles est retiré, et son auteur exclu, <strong>dans les 24 heures</strong> qui suivent son signalement ou sa découverte.</p>
+  </div>
+  <p>Exclure veut dire bloquer ou supprimer le compte. Revenir avec un nouveau compte est interdit.</p>
+
+  <h3 id="t-interdit"><span class="n">6</span><span>Ce qui est interdit</span></h3>
+  <p>Dans les photos, le prénom, la bio et les messages :</p>
+  <ul class="ban">
+    <li>la nudité et les contenus sexuels ;</li>
+    <li>la violence et les menaces ;</li>
+    <li>le harcèlement, les insultes, l'insistance après un refus ;</li>
+    <li>la haine : propos visant l'origine, la religion, le genre, l'orientation, le handicap… ;</li>
+    <li>les arnaques, les demandes d'argent ou de cadeaux, la publicité ;</li>
+    <li>tout contenu qui implique un mineur, et les photos où un enfant est seul ou reconnaissable ;</li>
+    <li>les coordonnées d'une autre personne (numéro, adresse, e-mail, réseaux), et ses photos ;</li>
+    <li>se faire passer pour quelqu'un d'autre. Un prénom d'emprunt est permis ; prendre l'identité d'une personne réelle ne l'est pas ;</li>
+    <li>tout contenu illégal.</li>
+  </ul>
+
+  <h3 id="t-signaler"><span class="n">7</span><span>Signaler et bloquer</span></h3>
+  <ul>
+    <li>Sur un profil ou dans une discussion, touche l'icône bouclier, en haut à droite.</li>
+    <li><strong>Signaler</strong> : choisis un motif. La personne est aussitôt bloquée.</li>
+    <li><strong>Bloquer</strong> : vous ne vous voyez plus, et la discussion disparaît.</li>
+    <li>Pour tout autre problème : <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</li>
+    <li>En danger ? Appelle le 17 (police) ou le 112.</li>
+  </ul>
+
+  <h3 id="t-moderation"><span class="n">8</span><span>Une modération humaine</span></h3>
+  <ul>
+    <li>Samuel Goldery modère lui-même, à la main.</li>
+    <li>Chaque photo est vérifiée avant d'être visible par les autres. En attendant, elle est « en vérification ».</li>
+    <li>Chaque signalement est examiné sous 24 heures. Pour cela, le modérateur peut consulter le profil signalé et, si besoin, la discussion concernée. Un signalement pour mineur passe en premier.</li>
+    <li>Un filtre automatique refuse certains mots (insultes, propos haineux, sollicitations sexuelles, demandes d'argent et moyens de paiement typiques des arnaques) dans les messages, les prénoms et les bios. Un texte refusé n'est pas enregistré dans notre base.</li>
+    <li>Tu peux contester une décision (photo refusée, compte exclu) en écrivant à <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</li>
+  </ul>
+
+  <h3 id="t-securite"><span class="n">9</span><span>Ta sécurité</span></h3>
+  <ul>
+    <li>Tu es responsable de ce que tu publies et de ce que tu envoies.</li>
+    <li>Pour un premier rendez-vous : choisis un lieu public, préviens un proche, n'envoie jamais d'argent.</li>
+    <li>Les messages ne sont pas chiffrés de bout en bout (voir <a href="#c-securite">Sécurité</a>).</li>
+  </ul>
+
+  <h3 id="t-disponibilite"><span class="n">10</span><span>Pas de garantie pendant la bêta</span></h3>
+  <ul>
+    <li>L'app est en test : bugs, pannes et interruptions sont possibles. Ses fonctions peuvent changer.</li>
+    <li>La bêta peut s'arrêter à tout moment. Une version TestFlight expire au bout de 90 jours.</li>
+  </ul>
+
+  <h3 id="t-compte"><span class="n">11</span><span>Ton compte</span></h3>
+  <ul>
+    <li>Ton compte n'est lié à aucun e-mail ni numéro de téléphone. Tu peux le relier à Apple (<span class="path">Moi › Protège ton compte</span>). Sans Apple, supprimer l'app fait perdre l'accès à ton compte.</li>
+    <li>Tu peux supprimer ton compte à tout moment : <span class="path">Moi › Confidentialité et données › Supprimer toutes mes données</span>. C'est immédiat et définitif.</li>
+    <li>Nous pouvons bloquer ou supprimer un compte qui enfreint ces conditions.</li>
+  </ul>
+
+  <h3 id="t-contact"><span class="n">12</span><span>Contact, changements et droit applicable</span></h3>
+  <ul>
+    <li><strong>Contact</strong> : Samuel Goldery, France. <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>.</li>
+    <li><strong>Changements</strong> : si ces conditions changent, nous te prévenons avant, dans l'app ou par TestFlight. Si tu n'es pas d'accord, tu peux supprimer ton compte.</li>
+    <li><strong>Droit applicable</strong> : le droit français. En cas de désaccord, écris-nous d'abord pour trouver une solution amiable. À défaut, les tribunaux français sont compétents. Si tu vis dans un autre pays de l'Union européenne, tu gardes la protection des règles impératives de ton pays.</li>
+  </ul>
+
+  <p class="back"><a href="#haut"><span aria-hidden="true">↑</span> Retour au sommaire</a></p>
+</section>
+
+<!-- ============================ MENTIONS LÉGALES ============================ -->
+<section class="part" id="mentions" aria-labelledby="titre-mentions">
+  <div class="part-head">
+    <svg class="part-icon" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="16" fill="var(--chip)"/>
+      <circle cx="17" cy="17" r="9" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <path d="M17 16v5.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="17" cy="12.6" r="1.3" fill="var(--accent)"/>
+    </svg>
+    <h2 id="titre-mentions">Mentions légales</h2>
+  </div>
+  <p class="lead">Pour le site oracoeur.fr.</p>
+  <dl class="legal">
+    <div>
+      <dt>Éditeur et directeur de la publication</dt>
+      <dd>Samuel Goldery (particulier), France · <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a></dd>
+    </div>
+    <div>
+      <dt>Hébergeur</dt>
+      <dd>GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis</dd>
+    </div>
+    <div>
+      <dt>Nom de domaine</dt>
+      <dd>Gandi SAS, Paris</dd>
+    </div>
+  </dl>
+
+  <p class="back"><a href="#haut"><span aria-hidden="true">↑</span> Retour au sommaire</a></p>
+</section>
+
+<footer class="bottom">
+  <p>Oracœur · Bêta privée · Version du 2 octobre 2026</p>
+  <p>Responsable : Samuel Goldery</p>
+  <nav class="foot-links" aria-label="Liens utiles">
+    <a href="../">Accueil</a>
+    <a href="#mentions">Mentions légales</a>
+    <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a>
+  </nav>
+</footer>
+
+</div>
+</body>
+</html>
