@@ -232,6 +232,15 @@ footer .sym{margin-top:10px;font-style:italic;font-family:var(--serif)}
   .fh{animation:none;opacity:var(--o,.25);transform:translateY(calc(var(--y) * -1))}
   .btn{transition:none}
 }
+/* Liste d'attente */
+.wl{display:grid;gap:10px;max-width:400px;margin:0 auto 14px}
+.wl input[type=email],.wl input:not([type]){min-height:52px;padding:0 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit;font-size:16px}
+.wl input::placeholder{color:var(--muted)}
+.wl .ok{display:flex;gap:10px;align-items:flex-start;text-align:left;color:var(--muted);font-size:14px;line-height:1.45}
+.wl .ok input{margin-top:3px;width:18px;height:18px;accent-color:var(--rose);flex:none}
+.wl .ok a{color:var(--blush)}
+.wl .msg{min-height:1.4em;font-size:15px;color:var(--gold)}
+.wl .msg.err{color:var(--blush)}
 </style>
 </head>
 <body>
@@ -278,8 +287,16 @@ footer .sym{margin-top:10px;font-style:italic;font-family:var(--serif)}
       <h1>Ora<span>cœ</span>ur</h1>
       <p class="tag">Deux cœurs. Un oracle.</p>
       <p class="lead">Des rencontres guidées par vos affinités, pour les cœurs ouverts à la spiritualité.</p>
-      <a class="btn" href="mailto:samuel.goldery@gmail.com?subject=Invitation%20%C3%A0%20la%20b%C3%AAta%20Orac%C5%93ur&amp;body=Bonjour%2C%0D%0A%0D%0AJe%20voudrais%20tester%20Orac%C5%93ur%20sur%20mon%20iPhone.%0D%0A%0D%0AMon%20pr%C3%A9nom%20%3A%20%0D%0AL%27e-mail%20de%20mon%20compte%20Apple%20%3A%20%0D%0A%0D%0AMerci%20%21"><svg class="ico fill" aria-hidden="true"><use href="#h"/></svg>Demander une invitation</a>
-      <p class="note"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Bêta privée sur iPhone · 18&nbsp;ans et plus</p>
+      <form id="attente" class="wl" novalidate>
+        <label class="sr" for="wl-mail">Ton e-mail</label>
+        <input id="wl-mail" type="email" required autocomplete="email" inputmode="email" maxlength="254" placeholder="Ton e-mail">
+        <label class="sr" for="wl-ville">Ta ville</label>
+        <input id="wl-ville" autocomplete="address-level2" maxlength="80" placeholder="Ta ville (facultatif)">
+        <label class="ok"><input id="wl-ok" type="checkbox" required><span>J'ai 18&nbsp;ans ou plus. Je veux un e-mail le jour de la sortie, et c'est tout. <a href="confidentialite/#c-attente">Détails</a></span></label>
+        <button class="btn" type="submit"><svg class="ico fill" aria-hidden="true"><use href="#h"/></svg>Préviens-moi le 14 février</button>
+        <p class="msg" role="status" aria-live="polite"></p>
+      </form>
+      <p class="note"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Sortie le 14 février sur iPhone · 18&nbsp;ans et plus</p>
     </div>
     <div class="stage">
       <div class="glow" aria-hidden="true"></div>
@@ -366,10 +383,10 @@ footer .sym{margin-top:10px;font-style:italic;font-family:var(--serif)}
   <section id="invitation" aria-labelledby="t-invit">
     <div class="cta rv">
       <img src="assets/oracoeur-mark.svg" width="84" height="84" alt="" loading="lazy">
-      <h2 id="t-invit">Rejoins la bêta privée</h2>
+      <h2 id="t-invit">Rendez-vous le 14 février</h2>
       <p class="tag">Deux cœurs. Un oracle.</p>
-      <p class="say">Sur iPhone, avec TestFlight. <span class="nw">Écris-nous</span> ton prénom et l'e-mail de ton compte Apple.</p>
-      <a class="btn" href="mailto:samuel.goldery@gmail.com?subject=Invitation%20%C3%A0%20la%20b%C3%AAta%20Orac%C5%93ur&amp;body=Bonjour%2C%0D%0A%0D%0AJe%20voudrais%20tester%20Orac%C5%93ur%20sur%20mon%20iPhone.%0D%0A%0D%0AMon%20pr%C3%A9nom%20%3A%20%0D%0AL%27e-mail%20de%20mon%20compte%20Apple%20%3A%20%0D%0A%0D%0AMerci%20%21"><svg class="ico fill" aria-hidden="true"><use href="#h"/></svg>Demander une invitation</a>
+      <p class="say">Oracœur sort le jour de la Saint-Valentin, sur iPhone. Laisse ton e-mail&nbsp;: on te prévient le jour J.</p>
+      <a class="btn" href="#attente"><svg class="ico fill" aria-hidden="true"><use href="#h"/></svg>Préviens-moi</a>
       <p class="alt">ou écris à <a href="mailto:samuel.goldery@gmail.com">samuel.goldery@gmail.com</a></p>
       <p class="small">Réservé aux 18&nbsp;ans et plus. Pendant la bêta, la plupart des profils sont fictifs et marqués «&nbsp;Profil fictif&nbsp;»&nbsp;: ils peuvent t'aimer en retour et répondent automatiquement.</p>
       <p class="alt"><a href="confidentialite/">Confidentialité et conditions</a></p>
@@ -385,5 +402,25 @@ footer .sym{margin-top:10px;font-style:italic;font-family:var(--serif)}
 </footer>
 </div>
 
+<script>
+// Liste d'attente : appel direct à la fonction Supabase join_waitlist (clé publique).
+(function(){
+  var f=document.getElementById('attente'),m=f.querySelector('.msg'),b=f.querySelector('button');
+  var src=new URLSearchParams(location.search).get('s')||'site';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();m.className='msg';
+    var mail=f.querySelector('#wl-mail'),ok=f.querySelector('#wl-ok');
+    if(!mail.checkValidity()||!mail.value){m.className='msg err';m.textContent='Vérifie ton e-mail.';mail.focus();return}
+    if(!ok.checked){m.className='msg err';m.textContent='Coche la case pour confirmer.';ok.focus();return}
+    b.disabled=true;m.textContent='Envoi…';
+    fetch('https://vkeukygccffzekenfseh.supabase.co/rest/v1/rpc/join_waitlist',{method:'POST',
+      headers:{'Content-Type':'application/json',apikey:'sb_publishable_CP4UrpyAnWj1RvdfxwOiPw_5Rp4QI6C'},
+      body:JSON.stringify({p_email:mail.value,p_city:f.querySelector('#wl-ville').value,p_source:src.slice(0,40)})})
+    .then(function(r){if(!r.ok)throw 0;f.reset();m.textContent='C\u2019est noté\u00a0! Rendez-vous le 14 février 💌'})
+    .catch(function(){m.className='msg err';m.textContent='Oups, réessaie dans un instant.'})
+    .finally(function(){b.disabled=false});
+  });
+})();
+</script>
 </body>
 </html>
